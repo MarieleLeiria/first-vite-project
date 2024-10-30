@@ -1,0 +1,19 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem;
+
+}
+
+.anyTasks {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--gray-300);
+    font-size: 1rem;
+    gap: 1rem;
+}
