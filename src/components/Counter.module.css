@@ -1,0 +1,18 @@
+.createTasks {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--blue);
+    align-items: center;
+
+}
+
+.conclueTasks {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    align-items: center;
+    color: var(--purple);
+}

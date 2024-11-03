@@ -15,14 +15,12 @@ function List({ content = 'string', onDeleteTask, conclueTask, changeCheck }) {
         conclueTask()
     }
 
-    // let checked = false;
+
 
     function endTask() {
-        // checked = !checked;
+
         let checked = !status;
         setStatus(checked);
-        // console.log('checked', checked)
-
         changeCheck(checked);
 
     }

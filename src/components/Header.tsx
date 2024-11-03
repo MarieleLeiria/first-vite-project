@@ -1,8 +1,10 @@
 import styles from './Header.module.css'
-import { PlusCircle, Rocket } from '@phosphor-icons/react'
+import { Rocket } from '@phosphor-icons/react'
 import List from './List'
 import { useState } from 'react'
 import Empty from './Empty'
+import Input from './Input'
+import Counter from './Counter'
 
 
 
@@ -19,7 +21,9 @@ function Header(content) {
         setNewTasks('');
 
     }
-    function handleTaskChange(event) {
+
+    function handleTaskChange(value) {
+        console.log('handleTaskChange', event.target.value)
         setNewTasks(event.target.value);
     }
 
@@ -46,41 +50,25 @@ function Header(content) {
         }
     }
 
-
-
     return (
         <>
             <header className={styles.header}>
                 <Rocket size={65} />
                 <h1>to<strong>do</strong></h1>
             </header>
-            <form onSubmit={HandleCreateNewTask} className={styles.addNewTask}>
-
-                <input
-                    name='task'
-                    value={newTasks}
-                    onChange={handleTaskChange}
-                    placeholder='Adicione uma nova tarefa' />
-
-                <button onClick={() => setTaskCount(taskCount + 1)} type='submit'>Criar
-                    <PlusCircle size={20} />
-                </button>
-            </form>
-            <div className={styles.checkbox}>
-
-                <div className={styles.createTasks}>
-
-                    <p>Tarefas criadas</p>
-                    <span>{taskCount}</span>
-                </div>
-
-                <div className={styles.conclueTasks}>
-                    <p>Concluidas</p>
-                    <span>{doneTasks}</span>
-                </div>
-
+            <div className={styles.inputArea}>
+                <Input
+                    newTask={HandleCreateNewTask}
+                    showNewTask={handleTaskChange}
+                    aNewTask={newTasks}
+                    eventOnClick={() => setTaskCount(taskCount + 1)}
+                />
             </div>
 
+            <div className={styles.checkbox}>
+                <Counter taskCounter={taskCount}
+                    taskDoneCounter={doneTasks} />
+            </div>
 
             <div className={styles.tasksList}>
                 {
