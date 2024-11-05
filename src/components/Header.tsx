@@ -50,6 +50,7 @@ function Header(content) {
         }
     }
 
+
     return (
         <>
             <header className={styles.header}>
@@ -66,8 +67,8 @@ function Header(content) {
             </div>
 
             <div className={styles.checkbox}>
-                <Counter taskCounter={taskCount}
-                    taskDoneCounter={doneTasks} />
+                <Counter taskCounter={() => checkedTask(true)}
+                    taskDoneCounter={() => checkedTask(false)} />
             </div>
 
             <div className={styles.tasksList}>

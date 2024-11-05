@@ -29,8 +29,8 @@ function List({ content = 'string', onDeleteTask, conclueTask, changeCheck }) {
     return (
         <div className={styles.tasks}>
             <div className={styles.items}>
-                <input onClick={endTask} type="checkbox" id="Estudar" name="Estudar"></input>
-                <label htmlFor="Estudar">{content}</label>
+                <input onClick={endTask} type="checkbox" id="task" name="task"></input>
+                <label htmlFor="task">{content}</label>
                 <button onClick={() => handleDeletetasks(content)} title='deletar tarefa'>
                     <Trash size={12} />
                 </button>
