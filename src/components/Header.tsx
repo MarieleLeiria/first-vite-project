@@ -67,8 +67,12 @@ function Header(content) {
             </div>
 
             <div className={styles.checkbox}>
-                <Counter taskCounter={() => checkedTask(true)}
-                    taskDoneCounter={() => checkedTask(false)} />
+                <Counter taskCounter={setDoneTasks(doneTasks + 1)}
+                    taskUnpending={setTaskCount(taskCount - 1)}
+
+                    taskDoneCounter={setDoneTasks(doneTasks - 1)}
+                    taskPending={setTaskCount(taskCount + 1)}
+                />
             </div>
 
             <div className={styles.tasksList}>

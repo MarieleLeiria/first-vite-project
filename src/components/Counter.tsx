@@ -1,14 +1,23 @@
 import styles from './Counter.module.css'
 
 
-function Counter({ taskCounter, taskDoneCounter }) {
+function Counter({ taskCounter, taskDoneCounter, taskPending, taskUnpending }) {
+
+    function numberOfPendingCounter() {
+        taskCounter()
+        taskUnpending()
+    }
+    function numberOfConclueCounter() {
+        taskDoneCounter()
+        taskPending()
+    }
     return (
         <>
 
             <div className={styles.createTasks}>
 
                 <p>Tarefas criadas</p>
-                <span>{taskCounter}</span>
+                <span>{conclued}</span>
             </div>
 
             <div className={styles.conclueTasks}>
